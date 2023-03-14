@@ -32,6 +32,7 @@ int main()
 		return -1;
 	}
 
+	// Note: out is zero terminated
 	printf("Encoded: %s\n", out);
 
 	// Our input will be the previous output
@@ -50,10 +51,8 @@ int main()
 		return -1;
 	}
 
-	// Set terminating NULL character
-	out[outlen] = '\0';
-
-	printf("Decoded: %s\n", out);
+	// Note: out is NOT zero terminated!
+	printf("Decoded: %.*s\n", (int)outlen, out);
 
 	// Free resources
 	free(out);
